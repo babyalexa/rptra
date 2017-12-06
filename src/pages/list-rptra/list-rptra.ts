@@ -32,7 +32,7 @@ export class ListRptraPage {
       console.log(this.items);
     });
   }
-
+  
   ionViewDidLoad() {
     console.log("ionViewDidLoad ListRptraPage");
   }
@@ -47,7 +47,9 @@ export class ListRptraPage {
   //   });
   // }
 
-  viewDetails() {
-    this.navCtrl.push(DetailsPage);
+  viewDetails(item) {
+    this.navCtrl.push(DetailsPage, {
+      item: item
+    });
   }
 }

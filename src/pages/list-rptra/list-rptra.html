@@ -5,21 +5,17 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>listRptra</ion-title>
-  </ion-navbar>
-
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">Search RPTRA</ion-searchbar>
 </ion-header>
 
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
+
   <ion-list>
     <ion-item *ngFor="let item of items">
       <h2>{{item.nama_rptra}}</h2>
       <p>{{item.kelurahan}}, {{item.kecamatan}} • {{item.waktu_peresmian}}</p>
-      <button ion-button clear item-end (click)="viewDetails()">View</button>
+      <button ion-button clear item-end (click)="viewDetails(item)">View</button>
     </ion-item>
   </ion-list>
 </ion-content>

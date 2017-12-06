@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DrivePage } from '../drive/drive';
-import { StreetViewPage } from '../street-view/street-view';
-import { FormPage } from '../form/form';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { DrivePage } from "../drive/drive";
+import { StreetViewPage } from "../street-view/street-view";
+import { FormPage } from "../form/form";
 
 /**
  * Generated class for the DetailsPage page.
@@ -13,26 +13,26 @@ import { FormPage } from '../form/form';
 
 @IonicPage()
 @Component({
-  selector: 'page-details',
-  templateUrl: 'details.html',
+  selector: "page-details",
+  templateUrl: "details.html"
 })
 export class DetailsPage {
-
+  item: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.item = navParams.get("item");
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsPage');
+    console.log("ionViewDidLoad DetailsPage");
   }
 
-  viewDrive(item){
+  viewDrive(item) {
     this.navCtrl.push(DrivePage);
   }
-  viewStreet(item){
+  viewStreet(item) {
     this.navCtrl.push(StreetViewPage);
   }
-  viewForm(item){
+  viewForm(item) {
     this.navCtrl.push(FormPage);
   }
-
 }
