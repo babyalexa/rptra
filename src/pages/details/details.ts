@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DrivePage } from '../drive/drive';
+import { StreetViewPage } from '../street-view/street-view';
+import { FormPage } from '../form/form';
 
 /**
  * Generated class for the DetailsPage page.
@@ -20,6 +23,16 @@ export class DetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+  }
+
+  viewDrive(item){
+    this.navCtrl.push(DrivePage);
+  }
+  viewStreet(item){
+    this.navCtrl.push(StreetViewPage);
+  }
+  viewForm(item){
+    this.navCtrl.push(FormPage);
   }
 
 }

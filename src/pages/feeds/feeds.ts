@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventDetailsPage } from '../event-details/event-details';
 
 /**
  * Generated class for the FeedsPage page.
@@ -20,6 +21,9 @@ export class FeedsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedsPage');
+  }
+  pushPage() {
+    this.navCtrl.push(EventDetailsPage);
   }
 
 }

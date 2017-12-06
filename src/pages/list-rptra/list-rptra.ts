@@ -31,7 +31,7 @@ export class ListRptraPage {
   //   });
   // }
 
-  pushPage() {
+  viewDetails() {
     this.navCtrl.push(DetailsPage);
   }
 }
