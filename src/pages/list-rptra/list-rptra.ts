@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { DetailsPage } from "../details/details";
+import { AppService } from "../../app/service/app.service";
 
 /**
  * Generated class for the ListRptraPage page.
@@ -15,7 +16,22 @@ import { DetailsPage } from "../details/details";
   templateUrl: "list-rptra.html"
 })
 export class ListRptraPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  items: any;
+  constructor(
+    private appService: AppService,
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {}
+
+  ngOnInit() {
+    this.getPosts();
+  }
+  getPosts() {
+    this.appService.getRptra().subscribe(response => {
+      this.items = response.data.children;
+      console.log(JSON.stringify(this.items));
+    });
+  }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad ListRptraPage");
