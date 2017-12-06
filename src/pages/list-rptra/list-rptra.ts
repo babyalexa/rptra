@@ -28,8 +28,8 @@ export class ListRptraPage {
   }
   getPosts() {
     this.appService.getRptra().subscribe(response => {
-      this.items = response.data.children;
-      console.log(JSON.stringify(this.items));
+      this.items = response.data;
+      console.log(this.items);
     });
   }
 

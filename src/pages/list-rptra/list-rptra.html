@@ -16,9 +16,9 @@
 <ion-content>
   <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
   <ion-list>
-    <ion-item>
-      <h2>My Neighbor Totoro</h2>
-      <p>Hayao Miyazaki • 1988</p>
+    <ion-item *ngFor="let item of items">
+      <h2>{{item.nama_rptra}}</h2>
+      <p>{{item.kelurahan}}, {{item.kecamatan}} • {{item.waktu_peresmian}}</p>
       <button ion-button clear item-end (click)="viewDetails()">View</button>
     </ion-item>
   </ion-list>
