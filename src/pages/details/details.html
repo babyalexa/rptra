@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!-- <ion-header>
 
   <ion-navbar>
     <ion-title>details</ion-title>
@@ -17,4 +17,54 @@
   <button ion-button (click)="viewDrive()">Drive To</button>
   <button ion-button color="secondary" (click)="viewStreet()">Street View</button>
   <button ion-button color="danger" (click)="viewForm()">Send Report</button>
+</ion-content> -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Google Maps
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div #map id="map"></div>
+    <ion-card-content>
+      <ion-card-title>
+        Nine Inch Nails Live
+      </ion-card-title>
+      <p>
+        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <div #map id="map"></div>
+
+  <div id="topButtons">
+    <button ion-button icon-left clear>
+      <ion-icon name="call"></ion-icon>
+      CALL
+    </button>
+    <button ion-button icon-left clear>
+      <ion-icon name="bookmark"></ion-icon>
+      SAVE
+    </button>
+    <button ion-button icon-left clear>
+      <ion-icon name="mail"></ion-icon>
+      MAIL
+    </button>
+    <button ion-button icon-left clear>
+      <ion-icon name="send"></ion-icon>
+      SEND
+    </button>
+  </div>
+  <hr>
+  <h1>
+    RPTRA {{item.nama_rptra}}
+  </h1>
+  <p>
+
+  </p> -->
 </ion-content>
