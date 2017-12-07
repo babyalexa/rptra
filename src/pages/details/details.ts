@@ -20,6 +20,7 @@ declare var google;
 })
 export class DetailsPage {
   item: any;
+  rate: any = 4;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get("item");
   }

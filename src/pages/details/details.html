@@ -28,7 +28,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <!-- <ion-card>
     <div #map id="map"></div>
     <ion-card-content>
       <ion-card-title>
@@ -38,9 +38,9 @@
         The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
       </p>
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 
-  <!-- <div #map id="map"></div>
+  <div #map id="map"></div>
 
   <div id="topButtons">
     <button ion-button icon-left clear>
@@ -61,10 +61,12 @@
     </button>
   </div>
   <hr>
+  <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
+    nullable="false"></rating>
   <h1>
     RPTRA {{item.nama_rptra}}
   </h1>
   <p>
 
-  </p> -->
+  </p>
 </ion-content>

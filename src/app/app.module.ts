@@ -17,6 +17,7 @@ import { FeedsPage } from "../pages/feeds/feeds";
 import { EventDetailsPage } from "../pages/event-details/event-details";
 import { ListRptraPage } from "../pages/list-rptra/list-rptra";
 import { HttpModule } from "@angular/http";
+import { Ionic2RatingModule } from "ionic2-rating";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { HttpModule } from "@angular/http";
     EventDetailsPage,
     ListRptraPage
   ],
-  imports: [HttpModule,BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [HttpModule,BrowserModule, IonicModule.forRoot(MyApp),Ionic2RatingModule],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
