@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { DrivePage } from "../drive/drive";
 import { StreetViewPage } from "../street-view/street-view";
 import { FormPage } from "../form/form";
+import { CallNumber } from '@ionic-native/call-number';
 
 declare var google;
 
@@ -21,11 +22,17 @@ declare var google;
 export class DetailsPage {
   item: any;
   rate: any = 4;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private callNumber: CallNumber) {
     this.item = navParams.get("item");
   }
 
   @ViewChild("map") mapRef: ElementRef;
+
+  telepon(){
+    this.callNumber.callNumber(this.item.telepon, true)
+    .then(() => console.log('Launched dialer!'))
+    .catch(() => console.log('Error launching dialer'));
+  }
 
   ionViewDidLoad() {
     this.showMap();
@@ -61,6 +68,8 @@ export class DetailsPage {
     this.navCtrl.push(StreetViewPage);
   }
   viewForm(item) {
-    this.navCtrl.push(FormPage);
+    this.navCtrl.push(FormPage, {
+      item: item
+    });
   }
 }

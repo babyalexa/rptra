@@ -19,6 +19,20 @@ import { ListRptraPage } from "../pages/list-rptra/list-rptra";
 import { HttpModule } from "@angular/http";
 import { Ionic2RatingModule } from "ionic2-rating";
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FormsModule} from '@angular/forms'
+import { CallNumber } from "@ionic-native/call-number";
+var config = {
+  apiKey: "AIzaSyCGo3o1Xh1sWz9c_s8sfnmD2BW8vqmjM54",
+  authDomain: "rptrapps-1512587984690.firebaseapp.com",
+  databaseURL: "https://rptrapps-1512587984690.firebaseio.com",
+  projectId: "rptrapps-1512587984690",
+  storageBucket: "rptrapps-1512587984690.appspot.com",
+  messagingSenderId: "899919673932"
+};
+//firebase.initializeApp(config);
+
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +47,14 @@ import { Ionic2RatingModule } from "ionic2-rating";
     EventDetailsPage,
     ListRptraPage
   ],
-  imports: [HttpModule,BrowserModule, IonicModule.forRoot(MyApp),Ionic2RatingModule],
+  imports: [
+    HttpModule,
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    Ionic2RatingModule,HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(config),
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -51,7 +72,8 @@ import { Ionic2RatingModule } from "ionic2-rating";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    CallNumber
   ]
 })
 export class AppModule {}

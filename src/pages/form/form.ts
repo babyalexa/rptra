@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventService } from '../../shared/event.service';
+
 
 /**
  * Generated class for the FormPage page.
@@ -12,14 +14,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-form',
   templateUrl: 'form.html',
+  providers: [EventService]
 })
 export class FormPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  item: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public eventService: EventService) {
+    this.item = navParams.get("item");
+    console.log(this.item);
+    this.eventService.selectedEvent
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormPage');
+    
   }
 
 }
