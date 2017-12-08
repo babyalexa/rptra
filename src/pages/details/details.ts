@@ -22,7 +22,7 @@ declare var google;
 })
 export class DetailsPage {
   data: any;
-  gambar: false;
+  gambar: boolean = false;
   item: any;
   rate: any = 0;
   constructor(private appService: AppService, public navCtrl: NavController, public navParams: NavParams,private callNumber: CallNumber) {
