@@ -29,7 +29,6 @@ export class ListRptraPage {
   getPosts() {
     this.appService.getRptra().subscribe(response => {
       this.items = response.data;
-      console.log(this.items);
     });
   }
   

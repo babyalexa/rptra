@@ -4,6 +4,7 @@ import { DrivePage } from "../drive/drive";
 import { StreetViewPage } from "../street-view/street-view";
 import { FormPage } from "../form/form";
 import { CallNumber } from '@ionic-native/call-number';
+import { AppService } from "../../app/service/app.service";
 
 declare var google;
 
@@ -20,13 +21,30 @@ declare var google;
   templateUrl: "details.html"
 })
 export class DetailsPage {
+  data: any;
+  gambar: false;
   item: any;
-  rate: any = 4;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private callNumber: CallNumber) {
+  rate: any = 0;
+  constructor(private appService: AppService, public navCtrl: NavController, public navParams: NavParams,private callNumber: CallNumber) {
     this.item = navParams.get("item");
   }
 
   @ViewChild("map") mapRef: ElementRef;
+
+  ngOnInit() {
+    this.getDetails();
+  }
+
+  getDetails(){
+    this.appService.getRptraDetails(this.item.location.latitude, this.item.location.longitude, this.item.nama_rptra, 400).subscribe(response => {
+      this.data = response;
+      if (this.data.status == 'OK'){
+        this.gambar = true;
+        this.rate = this.data.result.rating;
+      }
+      // console.log(this.data);
+    });
+  }
 
   telepon(){
     this.callNumber.callNumber(this.item.telepon, true)

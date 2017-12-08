@@ -88,4 +88,13 @@ page-details {
     }
   }
 
+  .gambar-area {
+    height: 30%;
+    display: block;
+    overflow: hidden;
+
+    img {
+      min-width: 100%;
+    }
+  }
 }

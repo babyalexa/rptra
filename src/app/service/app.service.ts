@@ -15,4 +15,9 @@ export class AppService {
   getRptra() {
     return this.http.get(this.baseUrl + "/rptra").map(res => res.json());
   }
+
+  getRptraDetails(lat, lng, nama, width) {
+    return this.http.get("http://rptra.azurewebsites.net/test.php?lat="+lat+"&lng="+lng+"&nama="+nama+"&width="+width).map(res => res.json());
+    
+  }
 }

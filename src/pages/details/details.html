@@ -28,14 +28,14 @@
 </ion-header>
 
 <ion-content>
-  <div #map id="map"></div>
-
+  <div #map id="map" *ngIf="!gambar"></div>
+  <div *ngIf="gambar" [ngClass]="'gambar-area'"><img src="{{this.data.result.photos[0].url}}-no?.jpg"></div>
   <div [ngClass]="'card-blue'">
     <span [ngClass]="'card-title'">RPTRA {{item.nama_rptra}}</span>
-    <!-- <span [ngClass]="'rate-num'">0.0</span>
+    <span [ngClass]="'rate-num'">{{this.rate}}</span>
     <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
       nullable="false">
-    </rating> -->
+    </rating>
     <hr>
     <p>
       <b>FASILITAS</b>
@@ -55,9 +55,13 @@
       GO
     </button>
     <button ion-button icon-left clear (click)="viewForm(item)">
-        <ion-icon name="send"></ion-icon>
-        EVENT
-      </button>
+      <ion-icon name="send"></ion-icon>
+      EVENT
+    </button>
+    <button ion-button icon-left clear>
+      <ion-icon name="mail"></ion-icon>
+      MAIL
+    </button>
   </div>
   <hr>
   <div [ngClass]="'card-area'">
@@ -72,7 +76,7 @@
 
   <hr>
 
-  <!--   
+  <!--
   <div #map id="map"></div>
 
   <div id="topButtons">

@@ -7,38 +7,72 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>feeds</ion-title>
+    <ion-title>Events</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-card>
-    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png" />
+<ion-content>
+  <ion-card class="adv-map">
+    <div style="position: relative">
+      <img src="https://i.ytimg.com/vi/bUUMzQ2kRh0/maxresdefault.jpg">
 
-    <ion-card-content>
-      <ion-card-title>
-        Nine Inch Nails Live
-      </ion-card-title>
-      <p>
-        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-      </p>
-    </ion-card-content>
-    <hr>
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="danger" icon-start (click)="pushPage()">
-          <ion-icon name='star'></ion-icon>
-          Favorite
+      <ion-fab right top>
+        <button ion-fab color="danger" class="fab-map">
+          <ion-icon name="pin"></ion-icon>
         </button>
-      </ion-col>
-      <ion-col text-center>
-        <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='musical-notes'></ion-icon>
-          Listen
+      </ion-fab>
+    </div>
+    <ion-item>
+      <ion-icon color="subtle" large item-start name='pin'></ion-icon>
+      <h2>RPTRA Madusela</h2>
+      <p>Jl. Mangga Besar XIII, RT 02 RW 03</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon color="subtle" large item-start name='information-circle'></ion-icon>
+      <h2>Turnamen Futsal Anak-Anak</h2>
+      <p>20 Desember 2017</p>
+    </ion-item>
+    <ion-item actions>
+      <span ion-text item-start class="item-bold">14.00 - 20.00</span>
+      <span ion-text item-start color="subtle">| 4.8 KM</span>
+      <button ion-button color="danger" clear item-end icon-start>
+        <ion-icon name='bookmark'></ion-icon>
+        PIN
+      </button>
+    </ion-item>
+
+  </ion-card>
+
+
+  <ion-card class="adv-map">
+    <div style="position: relative">
+      <img src="http://infonitas.com/img/post/medium/21-12-16_09.55.09425.jpg">
+      <ion-fab right top>
+        <button ion-fab color="secondary">
+          <ion-icon name="pin"></ion-icon>
         </button>
-      </ion-col>
-    </ion-row>
+      </ion-fab>
+    </div>
+    <ion-item>
+      <ion-icon color="subtle" large item-start name='pin'></ion-icon>
+      <h2>RPTRA Tunas Harapan</h2>
+      <p>Jalan Haji Amsir RW. 003</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon color="subtle" large item-start name='information-circle'></ion-icon>
+      <h2>Lomba Bulu Tangkis</h2>
+      <p>22 Desember 2017</p>
+    </ion-item>
+    <ion-item actions>
+      <span ion-text item-start color="secondary" class="item-bold">15.00 - 20.00</span>
+      <span ion-text item-start color="subtle">| 10 KM</span>
+      <button ion-button color="secondary" clear item-end icon-start>
+        <ion-icon name='bookmark'></ion-icon>
+        PIN
+      </button>
+    </ion-item>
+
   </ion-card>
 </ion-content>
