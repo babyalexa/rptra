@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { DrivePage } from "../drive/drive";
 import { StreetViewPage } from "../street-view/street-view";
 import { FormPage } from "../form/form";
-import { CallNumber } from '@ionic-native/call-number';
+import { CallNumber } from "@ionic-native/call-number";
 import { AppService } from "../../app/service/app.service";
 
 declare var google;
@@ -25,7 +25,12 @@ export class DetailsPage {
   gambar: boolean = false;
   item: any;
   rate: any = 0;
-  constructor(private appService: AppService, public navCtrl: NavController, public navParams: NavParams,private callNumber: CallNumber) {
+  constructor(
+    private appService: AppService,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private callNumber: CallNumber
+  ) {
     this.item = navParams.get("item");
   }
 
@@ -35,21 +40,31 @@ export class DetailsPage {
     this.getDetails();
   }
 
-  getDetails(){
-    this.appService.getRptraDetails(this.item.location.latitude, this.item.location.longitude, this.item.nama_rptra, 400).subscribe(response => {
-      this.data = response;
-      if (this.data.status == 'OK'){
-        this.gambar = true;
-        this.rate = this.data.result.rating;
-      }
-      // console.log(this.data);
-    });
+  getDetails() {
+    this.appService
+      .getRptraDetails(
+        this.item.location.latitude,
+        this.item.location.longitude,
+        this.item.nama_rptra,
+        400
+      )
+      .subscribe(response => {
+        this.data = response;
+        if (this.data.status == "OK") {
+          if (this.data.result.photos.length > 0) {
+            this.gambar = true;
+          }
+          this.rate = this.data.result.rating;
+        }
+        console.log(this.data);
+      });
   }
 
-  telepon(){
-    this.callNumber.callNumber(this.item.telepon, true)
-    .then(() => console.log('Launched dialer!'))
-    .catch(() => console.log('Error launching dialer'));
+  telepon() {
+    this.callNumber
+      .callNumber(this.item.telepon, true)
+      .then(() => console.log("Launched dialer!"))
+      .catch(() => console.log("Error launching dialer"));
   }
 
   ionViewDidLoad() {
