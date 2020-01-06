@@ -10,6 +10,8 @@ This is an Ionic 3 mobile application that uses the Open Data Jakarta Smart City
 
 ### Installation
 
+Adding me
+
 Install the dependencies
 
 ```sh
